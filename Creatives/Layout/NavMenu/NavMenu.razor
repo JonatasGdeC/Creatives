@@ -1,0 +1,25 @@
+﻿<MudAppBar>
+  <div class="d-flex align-items-center justify-content-start gap-3">
+    @if (AddDrawer)
+    {
+      <MudIconButton OnClick="@ToggleDrawer" Icon="@Icons.Material.Filled.Menu" Style="color: #fff"/>
+    }
+    <MudText Typo="Typo.body1">@TitlePage</MudText>
+  </div>
+</MudAppBar>
+@if (AddDrawer)
+{
+  <MudDrawer @bind-Open="@_isDrawerOpen" Elevation="0" Variant="@DrawerVariant.Persistent">
+    <MudDrawerHeader>
+      <MudText Typo="Typo.h6">Criativos</MudText>
+    </MudDrawerHeader>
+    <MudNavMenu>
+      @foreach (OptionCreativeDto link in ListLinks)
+      {
+        <MudNavLink Href="@link.Url" Match="NavLinkMatch.All" Icon="@link.Icon" IconColor="Color.Inherit">
+          @link.Title
+        </MudNavLink>
+      }
+    </MudNavMenu>
+  </MudDrawer>
+}

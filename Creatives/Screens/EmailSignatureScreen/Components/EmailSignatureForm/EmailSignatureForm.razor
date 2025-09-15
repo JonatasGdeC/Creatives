@@ -1,0 +1,16 @@
+<section class="email-signature-form">
+  <MudTextField T="string" @bind-Value="EmailSignatureModel.Name" @bind-Value:after="UpdateForm"
+                Placeholder="Nome do consultor" Immediate="true" Variant="Variant.Outlined" Style="width: 500px" MaxLength="24"/>
+  <div class="email-signature-form__contact">
+    <MudTextField T="string" @bind-Value="EmailSignatureModel.PhoneNumber" @bind-Value:after="UpdateForm"
+                  Placeholder="Telefone do consultor" Immediate="true" Disabled="@(!EmailSignatureModel.AddPhoneNumber)" Variant="Variant.Outlined" Style="width: 500px"
+                  Mask="@(new PatternMask(mask: "000 000 000"))"/>
+    <MudCheckBox @bind-Value="EmailSignatureModel.AddPhoneNumber" @bind-Value:after="UpdateForm" Color="Color.Primary"/>
+  </div>
+  <div class="email-signature-form__contact">
+    <MudTextField T="string" @bind-Value="EmailSignatureModel.Email" @bind-Value:after="UpdateForm"
+                  Placeholder="Email do consultor" Immediate="true" Disabled="@(!EmailSignatureModel.AddEmail)" Variant="Variant.Outlined" Style="width: 500px" MaxLength="30"/>
+    <MudCheckBox @bind-Value="EmailSignatureModel.AddEmail" @bind-Value:after="UpdateForm" Color="Color.Primary"/>
+  </div>
+  <MudButton OnClick="@Generate" Variant="Variant.Filled" Color="Color.Primary" Style="width: 500px">Gerar Assinatura</MudButton>
+</section>

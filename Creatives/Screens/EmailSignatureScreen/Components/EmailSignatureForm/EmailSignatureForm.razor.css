@@ -1,0 +1,11 @@
+.email-signature-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & > .email-signature-form__contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}

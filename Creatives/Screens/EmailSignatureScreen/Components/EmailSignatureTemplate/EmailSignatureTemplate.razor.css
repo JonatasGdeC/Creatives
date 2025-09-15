@@ -1,0 +1,96 @@
+.email-signature-template {
+  display: flex;
+  align-items: center;
+  height: 200px;
+  font-family: "Sora", sans-serif;
+  background-color: #FFF;
+
+  & > .email-signature-template__container-left {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background-color: #1C244B;
+    border-radius: 0 100px 100px 0;
+    padding: 24px;
+    width: 500px;
+    height: 200px;
+
+    & > .email-signature-template__container-left-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ccc;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & > .email-signature-template__container-left-infos {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .email-signature-template__container-left-infos-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #FFF;
+      }
+
+      .email-signature-template__container-left-infos-title {
+        color: rgb(122 195 251);
+        font-size: 18px;
+      }
+
+      & > .email-signature-template__container-left-infos-contact {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        & > .email-signature-template__container-left-infos-contact-text {
+          font-size: 16px;
+
+          & > .email-signature-template__container-left-infos-contact-text-span {
+            font-size: 10px;
+            color: rgb(122 195 251);
+          }
+        }
+      }
+    }
+  }
+
+  & > .email-signature-template__container-right {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 18px;
+    font-size: 14px;
+
+    & > .email-signature-template__container-right-infos {
+      display: flex;
+      flex-direction: column;
+
+      & > .email-signature-template__container-right-infos-phone {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        & > .email-signature-template__container-right-infos-phone-text {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+
+          & > .email-signature-template__container-right-infos-phone-text-phone {
+            font-size: 14px;
+          }
+
+          & > .email-signature-template__container-right-infos-phone-text-span {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}

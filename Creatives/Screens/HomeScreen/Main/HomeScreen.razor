@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <ul class="list-unstyled d-flex justify-content-center align-items-center flex-wrap gap-3">
+    @foreach (OptionCreativeDto link in ListLinks)
+    {
+      <li>
+        <MudButton OnClick="@(() => NavigateTo(url: link.Url))">
+          <div class="d-flex flex-column align-items-center">
+            <MudIcon Icon="@link.Icon" Size="Size.Large"/>
+            <MudText Typo="Typo.body1"><b>@link.Title</b></MudText>
+          </div>
+        </MudButton>
+      </li>
+    }
+  </ul>
+</div>

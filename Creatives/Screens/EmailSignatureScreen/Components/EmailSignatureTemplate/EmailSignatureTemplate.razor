@@ -1,0 +1,46 @@
+<article class="email-signature-template" id="signature-card">
+  <div class="email-signature-template__container-left">
+    <div class="email-signature-template__container-left-photo">
+      <MudIcon Size="Size.Large" Icon="@Icons.Material.Filled.AddAPhoto"/>
+    </div>
+    <div class="email-signature-template__container-left-infos">
+      <div>
+        <p class="email-signature-template__container-left-infos-name">@(!string.IsNullOrEmpty(value: EmailSignatureModel.Name) ? EmailSignatureModel.Name : "Nome do consultor")</p>
+        <p class="email-signature-template__container-left-infos-title">Consultor Imobiliário</p>
+      </div>
+      @if (EmailSignatureModel.AddPhoneNumber)
+      {
+        <div class="email-signature-template__container-left-infos-contact">
+          <MudIcon Icon="@Icons.Material.Filled.Call"/>
+          <div class="email-signature-template__container-left-infos-contact-text">
+            <p>+351 @(!string.IsNullOrEmpty(value: EmailSignatureModel.PhoneNumber) ? EmailSignatureModel.PhoneNumber : "XXX XXX XXX")</p>
+            <p class="email-signature-template__container-left-infos-contact-text-span">*chamada para a rede móvel nacional</p>
+          </div>
+        </div>
+      }
+      @if (EmailSignatureModel.AddEmail)
+      {
+        <div class="email-signature-template__container-left-infos-contact">
+          <MudIcon Icon="@Icons.Material.Filled.Email"/>
+          <div class="email-signature-template__container-left-infos-contact-text">
+            <p>@(!string.IsNullOrEmpty(value: EmailSignatureModel.Email) ? EmailSignatureModel.Email : "xxxxxxxx@iplace.pt")</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+  <div class="email-signature-template__container-right">
+    <img width="160" src="media/logo-iplace--background-transparent.svg" alt="Logo Iplace"/>
+    <p>Rua de Serpa Pinto, 182 <br/> 4050-128 - Porto - Portugal</p>
+    <div class="email-signature-template__container-right-infos">
+      <div class="email-signature-template__container-right-infos-phone">
+        <MudIcon Icon="@Icons.Material.Filled.Call" Style="color: #1C244B"/>
+        <div class="email-signature-template__container-right-infos-phone-text">
+          <p class="email-signature-template__container-right-infos-phone-text-phone">222 433 338</p>
+          <p class="email-signature-template__container-right-infos-phone-text-span">*chamada para a rede fixa nacional</p>
+        </div>
+      </div>
+    </div>
+    <p>Licença AMI 23033</p>
+  </div>
+</article>
