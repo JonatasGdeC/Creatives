@@ -1,0 +1,29 @@
+<div class="@($"add-input-photo{_dragClass}")" style="@StyleInputPhoto()">
+  @if (MultipleFiles)
+  {
+    <MudFileUpload T="IReadOnlyList<IBrowserFile>" OnFilesChanged="@HandleUploadFile" Accept="@Accept" Hidden="@false"
+                   AppendMultipleFiles="@MultipleFiles"
+                   @ondragenter="@SetDragClass" @ondragleave="@ClearDragClass" @ondrop="@ClearDragClass"
+                   MaximumFileCount="50"
+                   @ondragend="@ClearDragClass"
+                   InputClass="absolute mud-width-full mud-height-full overflow-hidden z-10"
+                   InputStyle="opacity:0; cursor:pointer;">
+      <ActivatorContent>
+        @Body
+      </ActivatorContent>
+    </MudFileUpload>
+  }
+  else
+  {
+    <MudFileUpload T="IBrowserFile" OnFilesChanged="@HandleUploadFile" Accept="@Accept" Hidden="@false"
+                   AppendMultipleFiles="@MultipleFiles"
+                   @ondragenter="@SetDragClass" @ondragleave="@ClearDragClass" @ondrop="@ClearDragClass"
+                   @ondragend="@ClearDragClass"
+                   InputClass="absolute mud-width-full mud-height-full overflow-hidden z-10"
+                   InputStyle="opacity:0; cursor:pointer;">
+      <ActivatorContent>
+        @Body
+      </ActivatorContent>
+    </MudFileUpload>
+  }
+</div>

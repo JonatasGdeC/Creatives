@@ -1,0 +1,8 @@
+.cropper-component {
+  padding: 10px;
+
+  & > img {
+    max-width: 100%;
+    max-height: 400px;
+  }
+}

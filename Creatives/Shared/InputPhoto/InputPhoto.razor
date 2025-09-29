@@ -1,0 +1,12 @@
+<MudFileUpload T="IBrowserFile" OnFilesChanged="@UploadFile" Accept=".png,.jpeg" Hidden="@false" @ondragenter="@SetDragClass" @ondragleave="@ClearDragClass" @ondrop="@ClearDragClass" @ondragend="@ClearDragClass" InputClass="absolute mud-width-full mud-height-full overflow-hidden z-10" InputStyle="opacity:0; cursor:pointer;">
+  <ActivatorContent>
+    @if (!string.IsNullOrEmpty(value: _base64Image))
+    {
+      <img src="@_base64Image" width="50" height="50" alt="Imagem do utilizador"/>
+    }
+    else
+    {
+      <MudText>Adicione a foto aqui.</MudText>
+    }
+  </ActivatorContent>
+</MudFileUpload>

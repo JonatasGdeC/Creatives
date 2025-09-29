@@ -1,7 +1,14 @@
 <article class="email-signature-template" id="signature-card">
   <div class="email-signature-template__container-left">
     <div class="email-signature-template__container-left-photo">
-      <MudIcon Size="Size.Large" Icon="@Icons.Material.Filled.AddAPhoto"/>
+      @if (!string.IsNullOrEmpty(value: EmailSignatureModel.Photo))
+      {
+        <img src="@EmailSignatureModel.Photo" alt="@EmailSignatureModel.Name"/>
+      }
+      else
+      {
+        <MudIcon Size="Size.Large" Icon="@Icons.Material.Filled.AddAPhoto"/>
+      }
     </div>
     <div class="email-signature-template__container-left-infos">
       <div>

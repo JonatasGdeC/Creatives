@@ -1,4 +1,18 @@
 <section class="email-signature-form">
+  <div class="email-signature-form__input-photo">
+    <AddInputUploadFile UploadFile="@HandleUploadFile" Accept=".jpg,.png,.jpeg,.webp,.jfif">
+      <Body>
+      <div class="email-signature-form__input-photo-input">
+        <MudIcon Icon="@Icons.Material.Filled.FileUpload"/>
+        <div>
+          <MudText Typo="Typo.body1"><b>Carregue a imagem do consultor</b></MudText>
+          <MudText Typo="Typo.body2">Formatos suportados JPG, PNG, JPEG, WEBP ou JFIF</MudText>
+        </div>
+      </div>
+      </Body>
+    </AddInputUploadFile>
+  </div>
+
   <MudTextField T="string" @bind-Value="EmailSignatureModel.Name" @bind-Value:after="UpdateForm"
                 Placeholder="Nome do consultor" Immediate="true" Variant="Variant.Outlined" Style="width: 500px" MaxLength="24"/>
   <div class="email-signature-form__contact">

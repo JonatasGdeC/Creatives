@@ -1,0 +1,12 @@
+.add-input-photo, .add-input-photo--active {
+  width: 100%;
+  border: 1px solid #F2F2F2;
+
+  &:hover {
+    border: 1px solid #477FEC;
+  }
+}
+
+.add-input-photo--active{
+  border: 1px solid #477FEC;
+}
