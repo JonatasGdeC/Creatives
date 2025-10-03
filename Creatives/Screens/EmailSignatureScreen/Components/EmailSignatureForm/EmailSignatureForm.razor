@@ -1,3 +1,4 @@
+@using Creatives.Utils
 <section class="email-signature-form">
   <div class="email-signature-form__input-photo">
     <AddInputUploadFile UploadFile="@HandleUploadFile" Accept=".jpg,.png,.jpeg,.webp,.jfif">
@@ -25,6 +26,13 @@
     <MudTextField T="string" @bind-Value="EmailSignatureModel.Email" @bind-Value:after="UpdateForm"
                   Placeholder="Email do consultor" Immediate="true" Disabled="@(!EmailSignatureModel.AddEmail)" Variant="Variant.Outlined" Style="width: 500px" MaxLength="30"/>
     <MudCheckBox @bind-Value="EmailSignatureModel.AddEmail" @bind-Value:after="UpdateForm" Color="Color.Primary"/>
+  </div>
+  <div style="width: 500px">
+    <MudSelect T="GeneratorImage.ImageExtension" @bind-Value="@_imageExtension" Variant="Variant.Outlined">
+      <MudSelectItem Value="GeneratorImage.ImageExtension.Png">Png</MudSelectItem>
+      <MudSelectItem Value="GeneratorImage.ImageExtension.Jpeg">Jpeg</MudSelectItem>
+      <MudSelectItem Value="GeneratorImage.ImageExtension.Webp">Webp</MudSelectItem>
+    </MudSelect>
   </div>
   <MudButton OnClick="@Generate" Variant="Variant.Filled" Color="Color.Primary" Style="width: 500px">Gerar Assinatura</MudButton>
 </section>

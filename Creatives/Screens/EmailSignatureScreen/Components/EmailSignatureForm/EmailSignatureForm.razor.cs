@@ -3,7 +3,6 @@ using Creatives.Models;
 using Creatives.Utils;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
-using Microsoft.JSInterop;
 
 namespace Creatives.Screens.EmailSignatureScreen.Components.EmailSignatureForm;
 
@@ -11,6 +10,8 @@ public partial class EmailSignatureForm
 {
   [Parameter] public EventCallback<EmailSignatureModel> EmailSignatureModelChanged { get; set; }
   [Parameter] public required EmailSignatureModel EmailSignatureModel { get; set; }
+
+  private GeneratorImage.ImageExtension _imageExtension = GeneratorImage.ImageExtension.Png;
 
   private async Task HandleUploadFile(IBrowserFile file)
   {
@@ -26,8 +27,15 @@ public partial class EmailSignatureForm
     StateHasChanged();
   }
 
-  public async Task Generate()
+  private async Task Generate()
   {
-    await JsRuntime.InvokeVoidAsync(identifier: "htmlToImage.download", "signature-card", "assinatura.png");
+    GeneratorImage generatorImage = new(jsRuntime: JsRuntime, model: new GeneratorImage.GeneratorImageModel
+    {
+      IdComponent = "signature-card",
+      TitleImage = "assinatura",
+      ImageExtension = _imageExtension
+    });
+
+    await generatorImage.Execute();
   }
 }
